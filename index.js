@@ -319,9 +319,6 @@ function errorInDivItem(divItem)
 function main()
 {
     drawGrid()
-    //eventListener(mouse click, makeMove)
-    //checkWinner()
-
 }
 
 main()
