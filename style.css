@@ -1,0 +1,59 @@
+.grid-container{
+    position: absolute;
+    display: grid;
+    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: repeat(7, 100px);
+    margin: auto;
+    border: 1px solid black;
+}
+
+.grid-item{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.token{
+    position: relative;
+    height: 95px;
+    width: 95px;
+    border-radius: 100px;
+    background-color: red;
+    top: -16.5px;
+    left: 1.25px;
+}
+
+.which-turn{
+    position: absolute;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    font-size: 50px;
+    top: 650px;
+    left: 230px;
+    background-color: red;
+}
+
+#error-text{
+    display: none;
+    position: absolute;
+    font-family: "Permanent Marker", cursive;
+    font-size: 40px;
+    top: 720px;
+    left: 270px;
+    background-color: crimson;
+
+}
+
+#new-game-btn
+{
+    position: absolute;
+    top: 750px;
+    left: 280px;
+    background-color: #40fa12;
+    padding: 14px 28px;
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
+}
+
