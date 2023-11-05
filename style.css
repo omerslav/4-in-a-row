@@ -5,6 +5,7 @@
     grid-template-columns: repeat(7, 100px);
     margin: auto;
     border: 1px solid black;
+    left: 30%;
 }
 
 .grid-item{
@@ -56,4 +57,15 @@
     font-family: "Permanent Marker", cursive;
     font-size: 20px;
 }
+
+.gif-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    left: 30%;
+    top: 630px;
+}
+
+
+
 

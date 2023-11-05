@@ -232,6 +232,7 @@ function markWinner(tokens)
         children[i].removeEventListener('mousedown', handleGridItemClick)
     }
     //name the winner
+    whichTurn.style.left = '20%'
     if (whichTurn.style.backgroundColor === 'red')
     {
         whichTurn.innerHTML = 'Blue is the winner!!!'
@@ -247,6 +248,8 @@ function markWinner(tokens)
     const btn = document.getElementById('new-game-btn')
     btn.removeAttribute('hidden')
     btn.addEventListener('click', function(){location.reload()})
+    addGif('gifs\\yardensecgif.gif', true)
+    addSound('winning')
 }
 
 function drawToken(i)
@@ -300,6 +303,58 @@ function errorNotValidPos(i)
     for (let i = 0; i < numberOfTimes; i++) {
         setTimeout(function(){errorInDivItem(errorText)}, delay * i);
     }
+
+    //add error gif
+    addGif('gifs\\yardengif.gif')
+    //add error sound
+    addSound('error')
+}
+
+function addGif(imgSrc, winning)
+{
+    const gifContainer1 = document.getElementById('gif-container1')
+    const gifContainer2 = document.getElementById('gif-container2')
+    const gifImage1 = document.createElement('img')
+    const gifImage2 = document.createElement('img')
+    gifImage1.src = imgSrc
+    gifImage2.src = imgSrc
+    gifContainer1.appendChild(gifImage1)
+    gifContainer2.appendChild(gifImage2)
+
+    if(!winning)
+    {
+        gifContainer2.style.left = '58%'
+        gifContainer2.style.top = '430px'
+        setTimeout(() => {
+            gifContainer1.removeChild(gifImage1)
+            gifContainer2.removeChild(gifImage2)
+        }, 1100);
+    }
+    else
+    {
+        gifContainer1.style.left = '20%'
+        gifContainer2.style.left = '61%'
+        gifContainer2.style.top = '430px'
+    }
+}
+
+function addSound(type)
+{
+    let errorAudios = [new Audio('sounds\\error1.mp3'),
+    new Audio('sounds\\error2.mp3'),
+    new Audio('sounds\\error3.mp3')]
+
+    let cheeringAudio = new Audio('sounds\\cheering.mp3')
+
+
+    if(type === 'error')
+    {
+        errorAudios[Math.floor(Math.random()*3)].play()
+    }
+    if(type === 'winning')
+    {
+        cheeringAudio.play()
+    }
 }
 
 function errorInGridItem(gridItem)
@@ -319,6 +374,9 @@ function errorInDivItem(divItem)
 function main()
 {
     drawGrid()
+    //eventListener(mouse click, makeMove)
+    //checkWinner()
+
 }
 
 main()
